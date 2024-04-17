@@ -11,7 +11,7 @@ class Token {
 	 *
 	 * @param type - Type of token
 	 * @param lexeme - The lexeme to assign to a token
-	 * @param literal - Syntax contruct whose use leads to a defined type
+	 * @param literal -	IDENTIFIER, STRING, NUMBER
 	 * @param line - The line number where the token is
 	 */
 	Token(TokenType type, String lexeme, Object literal, int line) {

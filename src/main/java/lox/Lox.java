@@ -18,6 +18,7 @@ public class Lox {
 		} else if (args.length == 1) {
 			runFile(args[0]);
 		} else {
+			System.out.println("Welcome to the lox prompt, type some code please, I've been stuck here for months alone...");
 			runPrompt();
 		}
 	}

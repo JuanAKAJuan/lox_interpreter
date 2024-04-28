@@ -112,6 +112,8 @@ class Scanner {
 					// A comment goes until the end of line.
 					while (peek() != '\n' && !isAtEnd())
 						advance();
+				} else if (match('*')) {
+					skipBlockComment();
 				} else {
 					addToken(SLASH);
 				}
@@ -236,6 +238,9 @@ class Scanner {
 		if (current + 1 >= source.length())
 			return '\0';
 		return source.charAt(current + 1);
+	}
+
+	private void skipBlockComment() {
 	}
 
 	/**

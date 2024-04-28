@@ -18,7 +18,8 @@ public class Lox {
 		} else if (args.length == 1) {
 			runFile(args[0]);
 		} else {
-			System.out.println("Welcome to the lox prompt, type some code please, I've been stuck here for months alone...");
+			System.out.println(
+					"Welcome to the lox prompt, type some code please, I've been stuck here for months alone...");
 			runPrompt();
 		}
 	}
@@ -32,7 +33,8 @@ public class Lox {
 	private static void runFile(String path) throws IOException {
 		byte[] bytes = Files.readAllBytes(Paths.get(path));
 		run(new String(bytes, Charset.defaultCharset()));
-		if (hadError) System.exit(65);
+		if (hadError)
+			System.exit(65);
 	}
 
 	/**
@@ -42,16 +44,17 @@ public class Lox {
 	private static void runPrompt() throws IOException {
 		InputStreamReader input = new InputStreamReader(System.in);
 		BufferedReader reader = new BufferedReader(input);
-		
+
 		for (;;) {
 			System.out.print("> ");
 			String line = reader.readLine();
-			if (line == null) break;
+			if (line == null)
+				break;
 			run(line);
 			hadError = false;
 		}
 	}
-	
+
 	/**
 	 * TODO: Document this once it is fully implemented.
 	 *
@@ -69,7 +72,7 @@ public class Lox {
 	/**
 	 * Check to see if there is a syntax error on a given line.
 	 *
-	 * @param line - The line number where the syntax error occurred
+	 * @param line    - The line number where the syntax error occurred
 	 * @param message - The message for the syntax error
 	 */
 	static void error(int line, String message) {
@@ -79,14 +82,13 @@ public class Lox {
 	/**
 	 * Report to the user that a syntax error has occurred and on what line.
 	 *
-	 * @param line - The line number where the syntax error occurred
-	 * @param where - Where the syntax error occurred
+	 * @param line    - The line number where the syntax error occurred
+	 * @param where   - Where the syntax error occurred
 	 * @param message - The message for the syntax error
 	 */
 	private static void report(int line, String where, String message) {
 		System.err.println("[line " + line + "] Error" + where + ": " + message);
 		hadError = true;
 	}
-
 
 }

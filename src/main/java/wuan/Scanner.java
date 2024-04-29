@@ -1,11 +1,11 @@
-package lox;
+package wuan;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static lox.TokenType.*;
+import static wuan.TokenType.*;
 
 class Scanner {
 	private final String source;
@@ -135,7 +135,7 @@ class Scanner {
 				} else if (isAlpha(c)) {
 					identifier();
 				} else {
-					Lox.error(line, "Unexpected character.");
+					Wuan.error(line, "Unexpected character.");
 				}
 				break;
 		}
@@ -184,7 +184,7 @@ class Scanner {
 		}
 
 		if (isAtEnd()) {
-			Lox.error(line, "Unterminated string.");
+			Wuan.error(line, "Unterminated string.");
 			return;
 		}
 
@@ -241,6 +241,12 @@ class Scanner {
 	}
 
 	private void skipBlockComment() {
+		int nesting = 1;
+		while (nesting > 0) {
+			if (peek() == '\0') {
+				// Wuan.error();
+			}
+		}
 	}
 
 	/**

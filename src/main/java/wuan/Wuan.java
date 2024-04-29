@@ -1,4 +1,4 @@
-package lox;
+package wuan;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,24 +8,24 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Lox {
+public class Wuan {
 	static boolean hadError = false;
 
 	public static void main(String[] args) throws IOException {
 		if (args.length > 1) {
-			System.out.println("Usage: jlox [script]");
+			System.out.println("Usage: jwuan [script]");
 			System.exit(64);
 		} else if (args.length == 1) {
 			runFile(args[0]);
 		} else {
 			System.out.println(
-					"Welcome to the lox prompt, type some code please, I've been stuck here for months alone...");
+					"Welcome to the Wuan prompt, type some code please, I've been stuck here for months alone...");
 			runPrompt();
 		}
 	}
 
 	/**
-	 * Start jlox from the command line and give it a path to a file. It will
+	 * Start jwuan from the command line and give it a path to a file. It will
 	 * then read the file and execute it.
 	 *
 	 * @param path - Path to the file
@@ -38,7 +38,7 @@ public class Lox {
 	}
 
 	/**
-	 * Start jlox without any arguments, and it will the user into a prompt where
+	 * Start jwuan without any arguments, and it will the user into a prompt where
 	 * they can enter and execute code one line at a time.
 	 */
 	private static void runPrompt() throws IOException {

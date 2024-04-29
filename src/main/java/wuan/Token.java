@@ -1,4 +1,4 @@
-package lox;
+package wuan;
 
 class Token {
 	final TokenType type;

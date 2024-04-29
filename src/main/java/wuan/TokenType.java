@@ -1,4 +1,4 @@
-package lox;
+package wuan;
 
 enum TokenType {
 	// Single character tokens.

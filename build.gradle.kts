@@ -11,6 +11,6 @@ plugins {
 
 tasks.withType<Jar> {
 	manifest {
-		attributes["Main-Class"] = "lox.Lox"
+		attributes["Main-Class"] = "wuan.Wuan"
 	}
 }

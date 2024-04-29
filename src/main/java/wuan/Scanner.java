@@ -240,12 +240,35 @@ class Scanner {
 		return source.charAt(current + 1);
 	}
 
+	/**
+	 * TODO: Document this function
+	 */
 	private void skipBlockComment() {
 		int nesting = 1;
 		while (nesting > 0) {
 			if (peek() == '\0') {
-				// Wuan.error();
+				Wuan.error(line, "Unterminated block comment.");
+				return;
 			}
+
+			// Enter block comment
+			if (peek() == '/' && peekNext() == '*') {
+				advance();
+				advance();
+				nesting++;
+				continue;
+			}
+
+			// Exit block comment
+			if (peek() == '*' && peekNext() == '/') {
+				advance();
+				advance();
+				nesting--;
+				continue;
+			}
+
+			// Regular comment character.
+			advance();
 		}
 	}
 

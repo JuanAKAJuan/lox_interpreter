@@ -241,7 +241,7 @@ class Scanner {
 	}
 
 	/**
-	 * TODO: Document this function
+	 * Skips C like block comments and handles nested block comments.
 	 */
 	private void skipBlockComment() {
 		int nesting = 1;
